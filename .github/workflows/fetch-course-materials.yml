@@ -1,10 +1,8 @@
 name: Fetch official course materials
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/fetch-course-materials.yml'
+  issues:
+    types: [opened]
   workflow_dispatch:
 
 permissions:
@@ -12,6 +10,7 @@ permissions:
 
 jobs:
   fetch:
+    if: github.event_name == 'workflow_dispatch' || github.event.issue.title == 'trigger: fetch course materials'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
