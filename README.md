@@ -14,20 +14,29 @@ Archive/index for **Software Security (MISS2105O2)**, Year II, Semester III, Sof
 ├── README.md
 ├── COURSE_INDEX.md
 ├── materials-manifest.json
-├── .gitignore
+├── materials/
+│   ├── Set-UID_Progs_Attacks.pdf
+│   ├── SHA256SUMS.txt
+│   └── FETCH_STATUS.md
 ├── scripts/
 │   └── scrape_course.py
-└── sources/
-    └── teacher-site-snapshot.md
+├── sources/
+│   └── teacher-site-snapshot.md
+└── .github/workflows/
+    └── fetch-course-materials.yml
 ```
 
 ## Quick navigation
 
 - [Course index, topics, labs and assessment](COURSE_INDEX.md)
+- [Archived lecture material](materials/Set-UID_Progs_Attacks.pdf)
+- [Current source-link availability](materials/FETCH_STATUS.md)
 - [Machine-readable source/material manifest](materials-manifest.json)
 - [Scraper for the teacher's public course page](scripts/scrape_course.py)
 - [Teacher-site snapshot](sources/teacher-site-snapshot.md)
 
-## Material policy
+## Material archive status
 
-This repository indexes the official public course resources and preserves their source URLs. The scraper can make a **local** snapshot and optionally download same-origin files into `materials/`, which is intentionally git-ignored. Course PDFs and other third-party material are not automatically re-published here unless their redistribution terms are known to permit it.
+The repository now keeps local copies of official course material when the source URL is still available. On 2026-10-01, the Set-UID lecture PDF was successfully archived and hashed.
+
+The teacher page still links eleven other lecture PDFs, but those source URLs currently return HTTP 404. They remain indexed in the repository so they can be recovered if the files reappear or a moved location is found. See [materials/FETCH_STATUS.md](materials/FETCH_STATUS.md) for the exact fetch result.
