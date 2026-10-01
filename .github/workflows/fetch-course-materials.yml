@@ -1,0 +1,67 @@
+name: Fetch official course materials
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/fetch-course-materials.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download official lecture PDFs
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p materials
+          base='https://edu.info.uaic.ro/securitate-software'
+
+          declare -A files=(
+            ['Set-UID_Progs_Attacks.pdf']="$base/Set-UID_Progs_Attacks.pdf"
+            ['Env_Vars_Attacks.pdf']="$base/Env_Vars_Attacks.pdf"
+            ['Sshock.pdf']="$base/Sshock.pdf"
+            ['Buffer Overflow.pdf']="$base/Buffer%20Overflow.pdf"
+            ['Scode.pdf']="$base/Scode.pdf"
+            ['Return-to-libc.pdf']="$base/Return-to-libc.pdf"
+            ['Protections_Buffer Overflow.pdf']="$base/Protections_Buffer%20Overflow.pdf"
+            ['FString_Attacks.pdf']="$base/FString_Attacks.pdf"
+            ['SS_Vulnerabilities.pdf']="$base/SS_Vulnerabilities.pdf"
+            ['Race Condition.pdf']="$base/Race%20Condition.pdf"
+            ['SQL Injection.pdf']="$base/SQL%20Injection.pdf"
+            ['XSS.pdf']="$base/XSS.pdf"
+          )
+
+          for name in "${!files[@]}"; do
+            echo "Fetching $name"
+            curl --fail --location --retry 3 --retry-delay 2 \
+              --user-agent 'UAIC-course-archive/1.0' \
+              "${files[$name]}" -o "materials/$name"
+            test "$(head -c 4 "materials/$name")" = '%PDF' || {
+              echo "Not a PDF: $name" >&2
+              exit 1
+            }
+          done
+
+          sha256sum materials/*.pdf > materials/SHA256SUMS.txt
+          ls -lh materials
+
+      - name: Commit materials
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f materials/
+          if git diff --cached --quiet; then
+            echo 'No material changes.'
+            exit 0
+          fi
+          git commit -m 'Archive official Software Security lecture materials [skip ci]'
+          git push
