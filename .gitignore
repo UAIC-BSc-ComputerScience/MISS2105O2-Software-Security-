@@ -1,0 +1,8 @@
+# Local scrape/download output
+scrape-output/
+materials/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
