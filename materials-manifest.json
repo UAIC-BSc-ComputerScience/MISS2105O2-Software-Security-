@@ -10,7 +10,75 @@
   "snapshot": {
     "date": "2026-10-01",
     "source_page": "https://edu.info.uaic.ro/securitate-software/",
-    "official_programme": "https://edu.info.uaic.ro/fise-discipline/2025--2026/2024_Master_Ingineria%20sistemelor%20software_Software%20Engineering/ISS_sem_3_Fisa%20disciplinei_Securitate%20software.pdf"
+    "official_programme": "https://edu.info.uaic.ro/fise-discipline/2025--2026/2024_Master_Ingineria%20sistemelor%20software_Software%20Engineering/ISS_sem_3_Fisa%20disciplinei_Securitate%20software.pdf",
+    "archive_status": {
+      "checked_at": "2026-10-01",
+      "archived_local": [
+        {
+          "title": "Set-UID Privileged Programs and Attacks",
+          "path": "materials/Set-UID_Progs_Attacks.pdf",
+          "source_url": "https://edu.info.uaic.ro/securitate-software/Set-UID_Progs_Attacks.pdf",
+          "http_status": 200
+        }
+      ],
+      "unavailable_source_urls": [
+        {
+          "title": "Environment Variables and Attacks",
+          "url": "https://edu.info.uaic.ro/securitate-software/Env_Vars_Attacks.pdf",
+          "http_status": 404
+        },
+        {
+          "title": "Shellshock Attack",
+          "url": "https://edu.info.uaic.ro/securitate-software/Sshock.pdf",
+          "http_status": 404
+        },
+        {
+          "title": "Buffer Overflow Attacks",
+          "url": "https://edu.info.uaic.ro/securitate-software/Buffer%20Overflow.pdf",
+          "http_status": 404
+        },
+        {
+          "title": "Shellcode Injection Attacks",
+          "url": "https://edu.info.uaic.ro/securitate-software/Scode.pdf",
+          "http_status": 404
+        },
+        {
+          "title": "Return-to-libc and ROP Attacks",
+          "url": "https://edu.info.uaic.ro/securitate-software/Return-to-libc.pdf",
+          "http_status": 404
+        },
+        {
+          "title": "Protection Mechanisms Against Buffer Overflow Attacks",
+          "url": "https://edu.info.uaic.ro/securitate-software/Protections_Buffer%20Overflow.pdf",
+          "http_status": 404
+        },
+        {
+          "title": "Format String Attacks",
+          "url": "https://edu.info.uaic.ro/securitate-software/FString_Attacks.pdf",
+          "http_status": 404
+        },
+        {
+          "title": "Software Security Vulnerabilities",
+          "url": "https://edu.info.uaic.ro/securitate-software/SS_Vulnerabilities.pdf",
+          "http_status": 404
+        },
+        {
+          "title": "Race Condition Attacks",
+          "url": "https://edu.info.uaic.ro/securitate-software/Race%20Condition.pdf",
+          "http_status": 404
+        },
+        {
+          "title": "SQL Injection Attacks",
+          "url": "https://edu.info.uaic.ro/securitate-software/SQL%20Injection.pdf",
+          "http_status": 404
+        },
+        {
+          "title": "Cross-Site Scripting (XSS) Attacks",
+          "url": "https://edu.info.uaic.ro/securitate-software/XSS.pdf",
+          "http_status": 404
+        }
+      ]
+    }
   },
   "lecture_notes": [
     {
@@ -76,5 +144,5 @@
     "Cross Site Scripting Attacks",
     "Software Security Vulnerabilities"
   ],
-  "note": "Public-source index. Same-origin files are not automatically committed; use scripts/scrape_course.py for a local refresh."
+  "note": "Public-source index plus local archive where the official file is currently retrievable. See materials/FETCH_STATUS.md."
 }
