@@ -5,6 +5,7 @@ Archive/index for **Software Security (MISS2105O2)**, Year II, Semester III, Sof
 - **Instructor:** Lecturer PhD. Vasile Cătălin Bîrjoveanu
 - **Official course page:** https://edu.info.uaic.ro/securitate-software/
 - **Official course programme:** https://edu.info.uaic.ro/fise-discipline/2025--2026/2024_Master_Ingineria%20sistemelor%20software_Software%20Engineering/ISS_sem_3_Fisa%20disciplinei_Securitate%20software.pdf
+- **Microsoft Teams meeting:** https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fmeet%2F381874599480652%3Fp%3D3KO6hyW4zxnM52D2Bv%26anon%3Dtrue&type=meet&deeplinkId=45a825dc-c6ed-4ee0-bb49-b3df9f048818&directDl=true&msLaunch=true&enableMobilePage=true&suppressPrompt=true
 - **Snapshot date:** 2026-10-01
 
 ## Repository contents
